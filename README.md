@@ -1,105 +1,242 @@
+# 🤖 EquiLedger - AI Financial Assistant for SMEs
 
-# [Next.js Enterprise Boilerplate](https://blazity.com/open-source/nextjs-enterprise-boilerplate) 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/equiledger-ai-copilot)
 
-A production-ready template for building enterprise applications with Next.js. This boilerplate provides a solid foundation with carefully selected technologies and ready-to-go infrastructure to help you develop high-quality applications efficiently.
+> **AI-powered financial management for South African small businesses**
 
-## Motivation
+EquiLedger is a comprehensive AI financial assistant that helps South African SMEs manage their finances through natural language processing. Create invoices, track expenses, generate reports, and get business insights - all through WhatsApp, Telegram, or web interface.
 
-While most Next.js boilerplates focus on individual developer needs with excessive complexity, **next-enterprise** prioritizes strategic simplicity for enterprise teams. It offers a streamlined foundation with high-impact features that maximize developer productivity and accelerate time-to-market for business-critical applications.
+## ✨ Features
 
-<a href="https://blazity.com/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="/assets/blazity-logo-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="/assets/blazity-logo-light.svg">
-  <img alt="Logo" align="right" height="80" src="/assets/blazity-logo-light.svg">
-</picture>
-</a>
+### 🤖 **AI-Powered Financial Services**
+- **Natural Language Processing**: "Create invoice for R500 website design for ABC Company"
+- **Intent Detection**: Automatically understands financial requests
+- **Multi-step Workflows**: Complex financial operations in single commands
+- **Business Insights**: AI-generated recommendations and analysis
 
-> [!NOTE]
-> **Blazity** is a group of Next.js architects. We help organizations architect, optimize, and deploy high-performance Next.js applications at scale. Contact us at [contact@blazity.com](https://blazity.com) if you’d like to talk about your project.
+### 📄 **Invoice Management**
+- Create professional invoices with automatic VAT calculations
+- Multi-line item support
+- Client management
+- Payment tracking
+- PDF generation ready
 
+### 💰 **Expense Tracking**
+- Categorized expense logging
+- Receipt upload support
+- Automatic VAT calculations
+- Expense analysis and insights
 
+### 📊 **Financial Reports**
+- Revenue and expense summaries
+- VAT compliance reports
+- Profit & loss analysis
+- Business health insights
+- Monthly, quarterly, and yearly reports
 
-## Documentation
+### 📱 **Multi-Channel Support**
+- **WhatsApp Integration**: Manage finances via WhatsApp
+- **Telegram Integration**: Telegram bot support
+- **Web Interface**: Professional dashboard
+- **Unified Data**: Sync across all platforms
 
-There is a separate documentation that explains its functionality, highlights core business values and technical decisions, provides guidelines for future development, and includes architectural diagrams.
+### 💳 **Payment Processing**
+- Stripe integration for invoice payments
+- Payment intent creation
+- Webhook handling
+- Payment tracking
 
-We encourage you to [visit our docs (docs.blazity.com)](https://docs.blazity.com) to learn more
+### 🔐 **Security & Compliance**
+- Multi-tenant data isolation
+- Webhook signature verification
+- Input validation with Zod
+- Audit trails and logging
+- South African VAT compliance
 
-## Integrated features
+## 🚀 Quick Start
 
-### Boilerplate
-With this template you will get all the boilerplate features included:
+### Prerequisites
+- Node.js 20+
+- PostgreSQL database
+- OpenAI API key
+- Twilio account (for WhatsApp)
+- Telegram Bot Token
+- Stripe account (for payments)
 
-* [Next.js 15](https://nextjs.org/) - Performance-optimized configuration using App Directory
-* [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework for efficient UI development
-* [ESlint 9](https://eslint.org/) and [Prettier](https://prettier.io/) - Code consistency and error prevention
-* [Corepack](https://github.com/nodejs/corepack) & [pnpm](https://pnpm.io/) as the package manager - For project management without compromises 
-* [Strict TypeScript](https://www.typescriptlang.org/) - Enhanced type safety with carefully crafted config and [ts-reset](https://github.com/total-typescript/ts-reset) library
-* [GitHub Actions](https://github.com/features/actions) - Pre-configured workflows including bundle size and performance tracking
-* Perfect Lighthouse score - Optimized performance metrics
-* [Bundle analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) - Monitor and manage bundle size during development
-* Testing suite - [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com/react), and [Playwright](https://playwright.dev/) for comprehensive testing
-* [Storybook](https://storybook.js.org/) - Component development and documentation
-* Advanced testing - Smoke and acceptance testing capabilities
-* [Conventional commits](https://www.conventionalcommits.org/) - Standardized commit history management
-* [Observability](https://opentelemetry.io/) - Open Telemetry integration
-* [Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases) - Simplified import structure
-* [Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) - Kubernetes-compatible monitoring
-* [Radix UI](https://www.radix-ui.com/) - Headless components for customization
-* [CVA](http://cva.style/) (Class Variance Authority) - Consistent design system creation
-* [Renovate BOT](https://www.whitesourcesoftware.com/free-developer-tools/renovate) - Automated dependency and security updates
-* [Patch-package](https://www.npmjs.com/package/patch-package) - External dependency fixes without compromises
-* Component relationship tools - Graph for managing coupling and cohesion
-* [Semantic Release](https://github.com/semantic-release/semantic-release) - Automated changelog generation
-* [T3 Env](https://env.t3.gg/) - Streamlined environment variable management
+### Installation
 
-### Infrastructure & deployments
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/equiledger-ai-copilot.git
+   cd equiledger-ai-copilot
+   ```
 
-#### Vercel
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
-Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=github&utm_campaign=next-enterprise) by clicking the button below:
+3. **Set up environment variables**
+   ```bash
+   cp env.template .env.local
+   # Edit .env.local with your API keys
+   ```
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise)
+4. **Set up the database**
+   ```bash
+   pnpm db:generate
+   pnpm db:push
+   ```
 
-#### Custom cloud infrastructure
+5. **Start the development server**
+   ```bash
+   pnpm dev
+   ```
 
-**next-enterprise** offers dedicated infrastructure as code (IaC) solutions built with Terraform, designed specifically for deploying Next.js applications based on our extensive experience working with enterprise clients.
+6. **Open [http://localhost:3000](http://localhost:3000)**
 
-Learn more in our [documentation (docs.blazity.com)][docs] how to quickstart with the deployments using simple CLI.
+## 🛠️ Tech Stack
 
-#### Available cloud providers and theirs features:
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes, Drizzle ORM
+- **Database**: PostgreSQL
+- **AI**: OpenAI GPT-4, Vercel AI SDK
+- **Authentication**: NextAuth.js
+- **Payments**: Stripe
+- **Messaging**: Twilio (WhatsApp), Telegram Bot API
+- **Deployment**: Vercel
 
-* **AWS (Amazon Web Services)**
-  * Automated provisioning of AWS infrastructure
-  * Scalable & secure setup using:
-     * VPC - Isolated network infrastructure
-     * Elastic Container Service (ECS) - Container orchestration
-     * Elastic Container Registry (ECR) - Container image storage
-     * Application Load Balancer - Traffic distribution
-     * S3 + CloudFront - Static asset delivery and caching
-     * AWS WAF - Web Application Firewall protection
-     * Redis Cluster - Caching
-  * CI/CD ready - Continuous integration and deployment pipeline
+## 📁 Project Structure
 
-*... more coming soon*
+```
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   │   ├── webhooks/      # WhatsApp & Telegram webhooks
+│   │   ├── invoices/      # Invoice management
+│   │   ├── expenses/      # Expense tracking
+│   │   ├── reports/       # Financial reports
+│   │   └── payments/      # Payment processing
+│   ├── dashboard/         # Main dashboard
+│   └── page.tsx          # Landing page
+├── components/            # React components
+│   ├── invoice/          # Invoice management UI
+│   ├── expense/          # Expense tracking UI
+│   └── reports/          # Financial reports UI
+├── lib/                  # Core libraries
+│   ├── ai/               # AI services
+│   ├── db/               # Database schema & connection
+│   ├── workflows/        # Custom workflow engine
+│   └── auth.ts           # Authentication config
+└── drizzle/              # Database migrations
+```
 
-### Team & maintenance
+## 🔧 Configuration
 
-**next-enterprise** is backed and maintained by [Blazity](https://blazity.com), providing up to date security features and integrated feature updates.
+### Environment Variables
 
-#### Active maintainers
+```bash
+# Database
+DATABASE_URL="postgresql://username:password@host:port/database"
 
-- Igor Klepacki ([neg4n](https://github.com/neg4n)) - Open Source Software Developer
-- Tomasz Czechowski ([tomaszczechowski](https://github.com/tomaszczechowski)) - Solutions Architect & DevOps
-- Jakub Jabłoński ([jjablonski-it](https://github.com/jjablonski-it)) - Head of Integrations
+# AI Services
+OPENAI_API_KEY="sk-your_openai_api_key"
 
-#### All-time contributors
-[bmstefanski](https://github.com/bmstefanski)
+# Messaging Services
+TWILIO_ACCOUNT_SID="your_twilio_account_sid"
+TWILIO_AUTH_TOKEN="your_twilio_auth_token"
+TWILIO_WHATSAPP_NUMBER="whatsapp:+1234567890"
+TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
 
-## License
+# Payment Processing
+STRIPE_SECRET_KEY="sk_your_stripe_secret_key"
+STRIPE_WEBHOOK_SECRET="whsec_your_webhook_secret"
 
-MIT
+# Authentication
+NEXTAUTH_SECRET="your_nextauth_secret"
+NEXTAUTH_URL="https://your-domain.vercel.app"
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
+```
 
+### Webhook Configuration
 
-[docs]: https://docs.blazity.com/next-enterprise/deployments/enterprise-cli
+- **WhatsApp**: `https://your-domain.vercel.app/api/webhooks/whatsapp`
+- **Telegram**: `https://your-domain.vercel.app/api/webhooks/telegram`
+- **Stripe**: `https://your-domain.vercel.app/api/payments/webhook`
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+1. **Connect to GitHub**
+   - Push your code to GitHub
+   - Connect your repository to Vercel
+
+2. **Configure Environment Variables**
+   - Add all environment variables in Vercel dashboard
+   - Set up webhook URLs
+
+3. **Deploy**
+   ```bash
+   vercel --prod
+   ```
+
+### Database Setup
+
+1. **Create PostgreSQL database**
+   - Use Vercel Postgres, Supabase, or any PostgreSQL provider
+
+2. **Run migrations**
+   ```bash
+   pnpm db:push
+   ```
+
+## 📖 Usage Examples
+
+### AI Chat Commands
+
+```
+"Create invoice for R500 website design for ABC Company"
+"Record R450 for transport fuel"
+"How much did I make this month?"
+"Show me my VAT report for this quarter"
+"Analyze my business health"
+```
+
+### API Endpoints
+
+- `POST /api/invoices` - Create invoice
+- `GET /api/invoices?userId=xxx` - List invoices
+- `POST /api/expenses` - Log expense
+- `POST /api/reports` - Generate financial report
+- `POST /api/webhooks/whatsapp` - WhatsApp webhook
+- `POST /api/webhooks/telegram` - Telegram webhook
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- AI powered by [OpenAI](https://openai.com/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Deployed on [Vercel](https://vercel.com/)
+
+## 📞 Support
+
+- 📧 Email: support@equiledger.co.za
+- 💬 WhatsApp: +27 61 234 5678
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/equiledger-ai-copilot/issues)
+
+---
+
+**Built with ❤️ for South African SMEs** 🇿🇦
